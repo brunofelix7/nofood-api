@@ -1,0 +1,19 @@
+//  PASSO A PASSO
+mkdir nofood-api
+cd nofood-api
+npm init
+copy nul server.js
+copy nul app.js
+npm start | node server.js | nodemon server
+
+//  DEPENDENCIAS
+npm install --save express
+npm install --save body-parser
+npm install --save morgan
+npm install -g nodemon
+
+//  COMANDOS DO SHELL
+del file.txt
+rmdir directory_name
+dir
+cd
