@@ -30,8 +30,7 @@ class ProductController {
     async delete (request, response) {
         let result = await repository.delete(request.params.id);
         return response.status(200).json({
-            message: `Product ${request.params.id} successfully deleted.`,
-            product: result
+            message: `Product ${request.params.id} successfully deleted.`
         });
     };
 

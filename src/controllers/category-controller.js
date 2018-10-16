@@ -30,8 +30,7 @@ class CategoryController {
     async delete (request, response) {
         let result = await repository.delete(request.params.id);
         return response.status(200).json({
-            message: `Category ${request.params.id} successfully deleted.`,
-            category: result
+            message: `Category ${request.params.id} successfully deleted.`
         });
     };
 

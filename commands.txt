@@ -18,3 +18,10 @@ del file.txt
 rmdir directory_name
 dir
 cd
+
+
+- log
+- validation
+- error_handling
+- auth
+- heroku
