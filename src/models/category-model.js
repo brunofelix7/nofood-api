@@ -3,10 +3,10 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
-/**Meu model */
+/**Definicao do meu schema */
 const category = new schema({
     //  _id: mongoose.Schema.Types.ObjectId,
-    title: { trim: true, index: true, required: true, type: String },
+    title: { trim: true, required: true, type: String },
     description: { type: String },
     photo: { type: String, required: true },
     active: { type: Boolean, required: true },

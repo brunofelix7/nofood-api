@@ -3,7 +3,7 @@ mkdir nofood-api
 cd nofood-api
 npm init
 copy nul server.js
-copy nul app.js
+copy nul express.js
 npm start | node server.js | nodemon server
 
 //  DEPENDENCIAS

@@ -1,8 +1,8 @@
 'use strict'
 
-const app = require('./bin/express');
-const variables = require('./bin/config/variables')
+const app = require('./config/express');
+const config = require('./config/config')
 
-app.listen(variables.api.port, () => {
-    console.log(`RESTful API NoFood started successfully on port ${variables.api.port}.`);
+app.listen(config.api.port, () => {
+    console.log(`RESTful API NoFood started successfully on port ${config.api.port}.`);
 });

@@ -1,4 +1,4 @@
-const variables = {
+const config = {
     api: {
         port: process.env.port || 3000
     },
@@ -7,4 +7,4 @@ const variables = {
     }
 }
 
-module.exports = variables;
+module.exports = config;
