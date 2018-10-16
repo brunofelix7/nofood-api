@@ -10,6 +10,7 @@ npm start | node server.js | nodemon server
 npm install --save express
 npm install --save body-parser
 npm install --save morgan
+npm install --save mongoose
 npm install -g nodemon
 
 //  COMANDOS DO SHELL
