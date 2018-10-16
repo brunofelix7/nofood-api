@@ -12,7 +12,7 @@ const product = new schema({
     dateCreation: { type: Date, default: Date.now }
 }, { versionKey: false });
 
-category.pre('save', next => {
+product.pre('save', next => {
     let now = new Date();
     if(!this.dateCreation) {
         this.dateCreation = now;

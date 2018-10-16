@@ -1,32 +1,52 @@
 'use strict'
 
-function productController() {
+const repository = require('../repositories/product-repository');
+
+class ProductController {
+
+    constructor() {
+
+    }    
+
+    /**POST api/products */
+    async create (request, response) {
+        let result = await repository.create(request.body);
+        return response.status(201).json({
+            message: "Product created successfully",
+            product: result
+        });
+    };
+
+    /**PUT api/products/{id} */
+    async update (request, response) {
+        let result = await repository.update(request.params.id, request.body);
+        return response.status(202).json({
+            message: "Product successfully updated.",
+            product: result
+        });
+    };
+
+    /**DELETE api/products/{id} */
+    async delete (request, response) {
+        let result = await repository.delete(request.params.id);
+        return response.status(200).json({
+            message: `Product ${request.params.id} successfully deleted.`,
+            product: result
+        });
+    };
+
+    /**GET api/products/{id} */
+    async find (request, response) {
+        let result = await repository.find(request.params.id);
+        return response.status(200).json(result);
+    };
+
+    /**GET api/products */
+    async list (request, response) {
+        let result = await repository.list();
+        return response.status(200).json(result);
+    };
 
 }
 
-/**CREATE */
-productController.prototype.create = async (request, response) => { 
-    response.status(201).json({ message: "POST request to /api/products" });
-};
-
-/**UPDATE */
-productController.prototype.update = async (request, response) => { 
-    response.status(202).json({ message: `PUT request to /api/products/${request.params.id}` });
-};
-
-/**DELETE */
-productController.prototype.delete = async (request, response) => { 
-    response.status(204).json({ message: `DELETE request to /api/products/${request.params.id}` });
-};
-
-/**FIND */
-productController.prototype.find = async (request, response) => { 
-    response.status(200).json({ message: `GET request to /api/products/${request.params.id}` });
-};
-
-/**LIST */
-productController.prototype.list = async (request, response) => { 
-    response.status(200).json({ message: "GET request to /api/products" });
-};
-
-module.exports = productController;
+module.exports = new ProductController();

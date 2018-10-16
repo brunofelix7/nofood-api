@@ -2,7 +2,7 @@ require('../models/category-model');
 const mongoose = require('mongoose');
 const Category = mongoose.model('Category');
 
-class CategoriaRepository {
+class CategoryRepository {
     
     constructor() {
 
@@ -37,4 +37,4 @@ class CategoriaRepository {
 
 }
 
-module.exports = new CategoriaRepository();
+module.exports = new CategoryRepository();
