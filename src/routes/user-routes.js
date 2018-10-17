@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/category-controller');
+const controller = require('../controllers/user-controller');
 
 router.post('/', (request, response) => controller.create(request, response));
 router.put('/:id', (request, response) => controller.update(request, response));

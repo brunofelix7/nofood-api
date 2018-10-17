@@ -11,6 +11,7 @@ npm install --save express
 npm install --save body-parser
 npm install --save morgan
 npm install --save mongoose
+npm install --save md5
 npm install -g nodemon
 
 //  COMANDOS DO SHELL
@@ -20,8 +21,9 @@ dir
 cd
 
 
+- cors
 - log
 - validation
 - error_handling
-- auth
-- heroku
+- auth jwt token
+- deploy heroku
