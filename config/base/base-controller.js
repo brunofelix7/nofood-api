@@ -10,7 +10,6 @@ class BaseController {
                     message: 'Invalid data on your request.',
                     validation: validation.errors()
                 }).end();
-                return;
             }
             let result = await repository.create(data);
             return response.status(201).json({

@@ -21,6 +21,7 @@ dir
 cd
 
 
+- send header (after post)
 - cors
 - log
 - validation

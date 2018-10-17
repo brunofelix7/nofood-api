@@ -11,7 +11,7 @@ class UserRepository {
     /**AUTH */
     async authenticate(email, password) {
         let _hashPassword = md5(password);
-        this._baseRepository._model.findOne({ email: email, password: _hashPassword });
+        this._baseRepository._model.findOne({ email: email, password: _hashPassword }, 'name email _id');
     }
 
     /**CREATE */
