@@ -1,6 +1,7 @@
 'use strict'
 
 const repository = require('../repositories/user-repository');
+const validation = require('../../config/validation/validation');
 
 class UserController {
 

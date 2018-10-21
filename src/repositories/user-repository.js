@@ -6,22 +6,29 @@ class UserRepository {
     
     constructor() {
         this._baseRepository = new BaseRepository('User');
+        this._projection = '_id name email';
     }
 
-    /**AUTH */
+    /** AUTHENTICATION */
     async authenticate(email, password) {
         let _hashPassword = md5(password);
-        this._baseRepository._model.findOne({ email: email, password: _hashPassword }, 'name email _id');
+        this._baseRepository._model.findOne({ email: email, password: _hashPassword }, this._projection);
     }
 
     /**CREATE */
     async create(data) {
-        return await this._baseRepository.create(data);
+        let user = await this._baseRepository.create(data);
+        return this._baseRepository.find(user._id, this._projection);
     }
 
     /**UPDATE */
     async update(id, data) {
-        return await this._baseRepository.update(id, data);
+        let user = await this._baseRepository.update(id, {
+            name: data.name,
+            email: data.email,
+            photo: data.photo
+        });
+        return this._baseRepository.find(user._id, this._projection);
     }
 
     /**DELETE */
@@ -31,12 +38,12 @@ class UserRepository {
 
     /**FIND */
     async find(id) {
-        return await this._baseRepository.find(id);
+        return await this._baseRepository.find(id, '_id name email photo');
     }
 
     /**LIST */
     async list() {
-        return await this._baseRepository.list();
+        return await this._baseRepository.list({}, this._projection);
     }
 
 }
